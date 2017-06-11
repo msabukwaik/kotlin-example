@@ -11,11 +11,34 @@ import android.view.MenuItem
 
 class MainActivity : AppCompatActivity() {
 
+
+    fun strLength(name:String) : Int{
+        return name?.length ?: -1;
+    }
+
+    /**
+     * This is onCreate method
+     * @param savedInstanceState
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main) //set content
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
+
+        //example of vars
+        val test = "testing"
+        //test = "123" //is not allowed
+
+        var name:String = "Mohammed"
+        name = "Ali"
+        //name = null //not allowed
+
+        var age:Int? = null
+
+        var ageToString = age?.toString() ?: "";
+        var ageToString2 = ageToString!!.toString();
+
 
         val fab = findViewById(R.id.fab) as FloatingActionButton
         fab.setOnClickListener { view ->
